@@ -98,7 +98,7 @@ public class MapAnimator extends AnimatorListenerAdapter implements ValueAnimato
     @NotNull
     private PolylineOptions getBackgroundOptions() {
         return new PolylineOptions()
-                .color(Color.parseColor(isRouteRequired ? "#FF7D4412" : "#007D4412"))
+                .color(Color.parseColor(isRouteRequired ? "#7D4412" : "#7D4412"))
                 .zIndex(2.0f)
                 .width(20);
     }
@@ -106,7 +106,7 @@ public class MapAnimator extends AnimatorListenerAdapter implements ValueAnimato
     @NotNull
     private PolylineOptions getForegroundOptions() {
         return new PolylineOptions()
-                .color(Color.parseColor(isRouteRequired ? "#FFE87817" : "#00E87817"))
+                .color(Color.parseColor(isRouteRequired ? "#E87817" : "#E87817"))
                 .zIndex(3.0f)
                 .endCap(new CustomCap(getBitmapDescriptor("end", vehicleType), 13))
                 .jointType(JointType.ROUND)

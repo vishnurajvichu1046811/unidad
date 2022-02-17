@@ -52,6 +52,7 @@ import com.utracx.api.model.rest.vehicle_list.VehicleInfo;
 import com.utracx.api.request.ApiUtils;
 import com.utracx.api.request.calls.VehicleDeviceDetailListRequestCall;
 import com.utracx.background.AddressTask;
+import com.utracx.background.DistanceCalculationTask;
 import com.utracx.background.MapCalculationTask;
 import com.utracx.background.TripCalculationTask;
 import com.utracx.database.datamodel.UserDataEntity;
@@ -654,6 +655,62 @@ public class MapActivity extends BaseRefreshActivity implements OnMapReadyCallba
             );
         }
     }
+ /*  private void startObservingDeviceDataList() {
+       if (activityViewModel != null && vehicleInfo != null
+               && vehicleInfo.getLastUpdatedData().getSerialNumber() != null
+               && !vehicleInfo.getLastUpdatedData().getSerialNumber().isEmpty()) {
+           stopObservingDeviceDataList();
+           long statTimeMilliSec;
+           long endTimeMilliSec;
+           if (timeInputEditText.getText().toString().trim().equals("")) {
+               statTimeMilliSec = getStartTimeOfDay(getStartTimeCalendar().getTimeInMillis());
+               endTimeMilliSec = getStartTimeOfDay(getStartTimeCalendar().getTimeInMillis()) + ONE_DAY_END_MILLISECOND;
+           } else {
+               long difference_In_Time
+                       = getEndTimeCalendar().getTimeInMillis() - getStartTimeCalendar().getTimeInMillis();
+
+               long difference_In_Minutes
+                       = (difference_In_Time
+                       / (1000 * 60))
+                       % 60;
+               statTimeMilliSec = getStartTimeCalendar().getTimeInMillis();
+               if (difference_In_Minutes <= 1) {
+                   endTimeMilliSec = getStartTimeOfDay(getStartTimeCalendar().getTimeInMillis()) + ONE_DAY_END_MILLISECOND;
+               } else {
+                   endTimeMilliSec = getEndTimeCalendar().getTimeInMillis();
+               }
+           }
+
+           currentDateDeviceDetail = activityViewModel.getLiveDeviceDataList(vehicleInfo.getLastUpdatedData().getSerialNumber(), statTimeMilliSec, endTimeMilliSec);
+           currentDateDeviceDetail.observe(
+                   this,
+                   deviceDataList -> {
+                       // when database has no entries for an old date fire the API,
+                       // for today the API call will automatically fire with each refresh
+                       if (!isSameDay(new Date(), getStartTimeCalendar().getTime())
+                               && (deviceDataList == null || deviceDataList.isEmpty())) {
+                           onUpdate();
+                           return;
+                       }
+
+                       if (deviceDataList != null && !deviceDataList.isEmpty()) {
+                           fireDistanceCalculationTask(deviceDataList);
+                       }
+                   }
+           );
+       }
+   }
+    private void fireDistanceCalculationTask(@NonNull List<DeviceData> deviceDataList) {
+        Executors.newSingleThreadExecutor().execute(
+                () -> new DistanceCalculationTask(
+                        MapActivity.this,
+                        deviceDataList,
+                        MapActivity.this
+                ).run()
+        );
+    }*/
+
+
 
     private Calendar getStartTimeCalendar() {
         return startTimeCalendar;
