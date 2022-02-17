@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "13140403279",
+    "project_id": "utracx-24437",
+    "storage_bucket": "utracx-24437.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:13140403279:android:3860459edb02aba566363a",
+        "android_client_info": {
+          "package_name": "com.utracx"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "13140403279-0aej7m7c0dhokmoapuh44hqn785h3obr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFo7ucT8SHySNPKMJN8CHAGyi2HeNYKxk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "13140403279-0aej7m7c0dhokmoapuh44hqn785h3obr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

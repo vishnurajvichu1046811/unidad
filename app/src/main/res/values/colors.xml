@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!--    Primary app colors -->
+    <color name="colorPrimary">#1D1F20</color>
+    <color name="colorPrimaryDark">#131313</color>
+    <color name="colorPrimaryLight">#333333</color>
+    <color name="colorAccent">#E55016</color>
+    <color name="iconBlack">#222222</color>
+    <color name="cardBackground">#404040</color>
+    <color name="cardOrangeColor">#f38120</color>
+    <color name="iconGreen">#07B118</color>
+    <color name="cardInformationColor">#F9F3F0</color>
+
+    <color name="colorDisableOrange">#ED9D60</color>
+    <!--    White and Greys-->
+
+    <color name="colorWhite80">#CCffffff</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="creamWhite">#F2F5F8</color>
+    <color name="creamDarkWhite">#DFDFDF</color>
+    <color name="colorOpaqueBlack">#D0000000</color>
+    <color name="colorGrayBG">#1A1A1A</color>
+    <color name="colorGrayFabBBg">#303133</color>
+    <color name="colorSearchViewTint">#3A3A3A</color>
+    <color name="colorWarmGrey">#9b9b9b</color>
+
+    <!--    Alert Type background colors -->
+    <color name="colorAlert01">#FF5E45</color>
+    <color name="colorAlert02">#5E7D62</color>
+    <color name="colorAlert03">#DE0A0A</color>
+    <color name="colorAlert04">#C9A516</color>
+
+    <!--    Vehicle background colors -->
+    <color name="colorGreenBg">#1CCD9D</color>
+    <color name="colorBlueBg">#577CFE</color>
+    <color name="colorOrangeBg">#FCAF2A</color>
+    <color name="colorRedBg">#FF6951</color>
+
+    <color name="colorDescription">#919498</color>
+    <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">@color/White</color>
+
+    <color name="colorShimmer">#EAEAEA</color>
+    <color name="colorDarkShimmer">@color/colorPrimary</color>
+
+    <color name="colorGrey">#8F8F8F</color>
+    <color name="colorIceCreamWhite">#ECECEC</color>
+
+    <color name="running_vehicle">#84CE00</color>
+    <color name="halt_vehicle">#C32148</color>
+    <color name="parked_vehicle">#00B2D6</color>
+    <color name="active_vehicle">#FFCF00</color>
+    <color name="in_active_vehicle">#FF2000</color>
+    <color name="reports">#1759D9</color>
+    <color name="console">#F42494</color>
+    <color name="alert">#F2EE0E</color>
+    <color name="colorOrangeVehicleSleepStart">#DEAF21</color>
+    <color name="colorGreyUnknownStart">#A8A4A4</color>
+    <color name="color_light_grey">#FAFAFA</color>
+    <color name="colorAppBlack">#1F1A17</color>
+    <color name="colorAppGrey">#495057</color>
+    <color name="colorGreyishBrown">#4a4a4a</color>
+    <color name="colorLightGreyBackground">#F5F5F5</color>
+    <color name="description_grey">#707070</color>
+    <color name="description_trip_details">#707070</color>
+
+</resources>

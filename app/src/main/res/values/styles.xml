@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowAnimationStyle">@style/CustomActivityAnimation</item>
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/colorPrimary</item>
+    </style>
+
+    <style name="CustomActivityAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
+    </style>
+
+    <style name="MapTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/White</item>
+        <item name="colorAccent">@color/colorPrimaryDark</item>
+        <item name="android:windowAnimationStyle">@style/CustomActivityAnimation</item>
+    </style>
+
+    <style name="SearchViewTheme">
+        <item name="android:editTextColor">@color/colorWhite</item>
+        <item name="android:textColorHint">@color/colorSearchViewTint</item>
+    </style>
+
+    <style name="CalenderTheme">
+        <item name="android:editTextColor">@color/White</item>
+        <item name="android:textColor">@color/colorRedBg</item>
+
+        <item name="android:backgroundTint">@color/colorRedBg</item>
+
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="MaterialCalendarTheme" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+
+        <!-- Buttons -->
+        <item name="buttonBarPositiveButtonStyle">@style/TextButton</item>
+        <item name="buttonBarNegativeButtonStyle">@style/TextButton</item>
+    </style>
+    <style name="TextButton" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/cardOrangeColor</item>
+        <item name="backgroundTint">@color/colorGreenBg</item>
+    </style>
+
+
+    <style name="my_dialog_theme" parent="ThemeOverlay.AppCompat.Dialog">
+        <item name="colorPrimary">@color/colorBlueBg</item>            <!-- buttons -->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:windowAnimationStyle">@style/CustomActivityAnimation</item>
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>                   <!-- header background -->
+        <item name="android:windowBackground">@color/cardBackground</item>   <!-- calendar background -->
+        <item name="android:colorControlActivated">@color/colorAccent</item> <!-- selected day -->
+        <item name="android:textColorPrimary">@color/White</item> <!-- days of the month -->
+        <item name="android:textColorSecondary">@color/colorAccent</item>    <!-- days of the week -->
+    </style>
+
+    <!--
+    HeaderLaoyout     -> background:colorPrimary, textColor:colorOnPrimary
+    HeaderSelection   -> background:colorPrimary, textColor:colorOnPrimary
+    ConfirmButtons    -> background:colorPrimary, textColor:colorOnPrimary
+    Buttons           -> background:colorPrimary, textColor:colorOnSurface
+    HeaderToggleButton->                          textColor:colorOnPrimary
+    Day               ->                          text:colorOnSurface  stroke:colorOnSurface
+    SelectedDay       -> background:colorPrimary, textColor:colorOnPrimary
+    RangeFillColor    -> background:colorPrimary
+    -->
+    <style name="MaterialTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorWhite</item>
+    </style>
+
+    <style name="AlertDialog" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorWhite</item>
+        <item name="android:windowAnimationStyle">@style/CustomActivityAnimation</item>
+    </style>
+
+    <style name="AlertDialog1" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+        <item name="colorPrimary">@color/colorRedBg</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorWhite</item>
+        <item name="android:windowAnimationStyle">@style/CustomActivityAnimation</item>
+    </style>
+
+    <style name="AppTheme.EditText">
+        <item name="android:background">@drawable/edit_text_border</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:textColor">@color/colorOpaqueBlack</item>
+        <item name="android:textColorHint">@color/colorOpaqueBlack</item>
+        <item name="android:padding">12dp</item>
+        <item name="fontFamily">@font/dm_sans_bold</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+        <item name="android:textCursorDrawable">@drawable/edit_text_cursor_color</item>
+    </style>
+
+    <style name="AppExtendedFloatingButton" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Add attributes here -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="textAppearanceButton">@style/AppExtendedFloatingButton.Button</item>
+    </style>
+
+    <style name="AppExtendedFloatingButton.Button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <!--<style name="AppEditEditTextOutlineStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="fontFamily">@font/dm_sans_bold</item>
+        <item name="hintTextColor">@color/colorWhite</item>
+        <item name="android:textColorHint">@color/colorWhite</item>
+        <item name="android:colorAccent">@color/White</item>
+        <item name="boxStrokeColor">@color/colorGrey</item>
+        <item name="boxStrokeWidth">2dp</item>
+    </style>-->
+    <style name="AppEditEditTextOutlineStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeColor">@color/colorGrey</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="fontFamily">dm_sans_bold</item>
+        <item name="hintTextColor">@color/colorWhite</item>
+        <item name="android:textColorHint">@color/colorWhite</item>
+    </style>
+
+    <style name="AppTextInputEditText" parent="Base.Widget.MaterialComponents.TextInputEditText">
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">5dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="fontFamily">@font/dm_sans_bold</item>
+    </style>
+
+<!--nav drawer -->
+
+    <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+<!--  togglebutton  -->
+
+    <style name="ToggleButtonWithIconOnly" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="iconPadding">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">12dp</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+
+    <style name="Widget.Button.Toggle" parent="android:Widget">
+        <item name="android:background">@drawable/ic_toggle_bg</item>
+        <item name="android:disabledAlpha">?android:attr/disabledAlpha</item>
+    </style>
+
+    <style name="toggleButton">
+        <item name="android:buttonStyleToggle">@style/Widget.Button.Toggle</item>
+        <item name="android:textOn"></item>
+        <item name="android:textOff"></item>
+    </style>
+
+</resources>

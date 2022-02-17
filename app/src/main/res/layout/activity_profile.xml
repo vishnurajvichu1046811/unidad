@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar4"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/iconBlack"
+        android:gravity="end"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/backView"
+        android:layout_width="wrap_content"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?android:attr/selectableItemBackground"
+        android:padding="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_arrow_back" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Profile"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar4" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/toolbar4"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:backgroundTint="#F1EDED"
+            android:gravity="center|start"
+            android:orientation="horizontal"
+            android:padding="15dp">
+
+            <TextView
+                android:id="@+id/iv_vehicle"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/background_circle"
+                android:backgroundTint="@color/cardOrangeColor"
+                android:fontFamily="@font/dm_sans_bold"
+                android:gravity="center"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:visibility="visible"
+                tools:ignore="MissingConstraints" />
+
+            <EditText
+                android:id="@+id/et_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:cursorVisible="true"
+                android:drawableEnd="@drawable/ic_edit"
+                android:drawableTint="@color/iconBlack"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text=""
+                android:textColor="#171616"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:ignore="MissingConstraints,TextViewEdits" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_upFullname"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+
+            <Button
+                android:id="@+id/btn_upName"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:backgroundTint="#ED9D60"
+                android:text="Update"
+                android:textColor="@color/colorWhite"
+                tools:ignore="DuplicateIds" />
+
+            <Button
+                android:id="@+id/btn_cName"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/cardInformationColor"
+                android:text="cancel"
+                tools:ignore="DuplicateIds" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout2"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout2">
+
+        <TextView
+            android:id="@+id/tv_upVehicle_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_cream_white_full_rounded"
+            android:drawableStart="@drawable/ic_trip_vehicle_moving"
+            android:drawableEnd="@drawable/ic_arrow_right"
+            android:drawablePadding="10dp"
+            android:gravity="center|start"
+            android:layout_marginBottom="15dp"
+            android:padding="10dp"
+            android:text="@string/edit_vehicle"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:textColorHint="#CCCCCC"
+            app:drawableTint="@color/iconBlack"/>
+
+
+        <EditText
+            android:visibility="gone"
+            android:id="@+id/et_regno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_cream_white_full_rounded"
+            android:drawableStart="@drawable/ic_trip_vehicle_moving"
+            android:drawableEnd="@drawable/ic_arrow_down"
+            android:drawablePadding="10dp"
+            android:gravity="center|start"
+            android:hint="Choose vehicle"
+            android:layout_marginBottom="15dp"
+            android:padding="10dp"
+            android:text=""
+            android:onClick="showVehicleList"
+            android:editable="false"
+            android:cursorVisible="false"
+            android:textColor="#000000"
+            android:textColorHint="#CCCCCC"
+            app:drawableTint="@color/iconBlack" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_upRegno"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+
+            <Button
+                android:id="@+id/btn_upRegno"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:backgroundTint="#ED9D60"
+                android:text="Update"
+                android:textColor="@color/colorWhite"
+                tools:ignore="DuplicateIds" />
+
+            <Button
+                android:id="@+id/btn_cRegno"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/cardInformationColor"
+                android:text="cancel"
+                tools:ignore="DuplicateIds" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_cream_white_full_rounded"
+            android:drawableStart="@drawable/ic_mail"
+            android:drawableEnd="@drawable/ic_edit"
+            android:drawablePadding="10dp"
+            android:gravity="center|start"
+            android:hint="Email not found"
+            android:padding="10dp"
+            android:text=""
+            android:textColor="#000000"
+            android:textColorHint="#CCCCCC"
+            app:drawableTint="@color/iconBlack" />
+
+        <LinearLayout
+            android:id="@+id/ll_upEmail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+
+            <Button
+                android:id="@+id/btn_upEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:backgroundTint="#ED9D60"
+                android:text="Update"
+                android:textColor="@color/colorWhite"
+                tools:ignore="DuplicateIds" />
+
+            <Button
+                android:id="@+id/btn_cEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/cardInformationColor"
+                android:text="cancel"
+                tools:ignore="DuplicateIds" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_phno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_cream_white_full_rounded"
+            android:clickable="true"
+            android:drawableStart="@drawable/ic_phone"
+            android:drawableEnd="@drawable/ic_edit"
+            android:drawablePadding="10dp"
+            android:gravity="center|start"
+            android:hint="Phone number not found"
+            android:inputType="phone"
+            android:maxLength="10"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:text=""
+            android:textColor="@android:color/black"
+            android:textColorHint="#CCCCCC"
+            android:textSize="18sp"
+            app:drawableTint="@color/iconBlack" />
+
+        <LinearLayout
+            android:id="@+id/ll_upPhone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+
+            <Button
+                android:id="@+id/btn_upPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:backgroundTint="#ED9D60"
+                android:text="Update"
+                android:textColor="@color/colorWhite"
+                tools:ignore="DuplicateIds" />
+
+            <Button
+                android:id="@+id/btn_cPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/cardInformationColor"
+                android:text="cancel"
+                tools:ignore="DuplicateIds" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_cream_white_full_rounded"
+            android:clickable="true"
+            android:drawableStart="@drawable/ic_home"
+            android:drawableEnd="@drawable/ic_edit"
+            android:drawablePadding="10dp"
+            android:gravity="center|start"
+            android:hint="Address not found"
+            android:padding="10dp"
+            android:text=""
+            android:textColor="@android:color/black"
+            android:textColorHint="#CCCCCC"
+            android:textSize="18sp"
+            app:drawableTint="@color/iconBlack" />
+
+        <LinearLayout
+            android:id="@+id/ll_upAdress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+
+            <Button
+                android:id="@+id/btn_upAdress"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:backgroundTint="#ED9D60"
+                android:text="Update"
+                android:textColor="@color/colorWhite"
+                tools:ignore="DuplicateIds" />
+
+            <Button
+                android:id="@+id/btn_cAdress"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/cardInformationColor"
+                android:text="cancel"
+                tools:ignore="DuplicateIds" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/tv_cPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_cream_white_full_rounded"
+            android:drawableStart="@drawable/ic_lock"
+            android:drawableEnd="@drawable/ic_edit"
+            android:drawablePadding="10dp"
+            android:focusableInTouchMode="true"
+            android:gravity="center|start"
+            android:editable="false"
+            android:cursorVisible="false"
+            android:padding="10dp"
+            android:text="Change password"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:drawableTint="@color/iconBlack" />
+
+        <LinearLayout
+            android:id="@+id/ll_upPassword"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/etp_passOld"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/bg_cream_white_full_rounded"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="Current password"
+                    android:inputType="textPassword"
+                    android:textColor="@color/iconBlack"
+                    android:textColorHint="#ccc" />
+
+                <ImageView
+                    android:id="@+id/show_pass_old"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:alpha=".5"
+                    android:onClick="ShowHidePass"
+                    android:padding="5dp"
+                    android:src="@drawable/pass_hide" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/etp_passNew"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/bg_cream_white_full_rounded"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="New password"
+                    android:inputType="textPassword"
+                    android:textColor="@color/iconBlack"
+                    android:textColorHint="#ccc" />
+
+                <ImageView
+                    android:id="@+id/show_pass_new"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:alpha=".5"
+                    android:onClick="ShowHidePass"
+                    android:padding="5dp"
+                    android:src="@drawable/pass_hide" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/etp_passConform"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:background="@drawable/bg_cream_white_full_rounded"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="Conform password"
+                    android:inputType="textPassword"
+                    android:textColor="@color/iconBlack"
+                    android:textColorHint="#ccc" />
+
+                <ImageView
+                    android:id="@+id/show_npass_conf"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:alpha=".5"
+                    android:onClick="ShowHidePass"
+                    android:padding="5dp"
+                    android:src="@drawable/pass_hide" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+
+                <Button
+                    android:id="@+id/btn_upPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#ED9D60"
+                    android:text="Update"
+                    android:textColor="@color/colorWhite"
+                    tools:ignore="DuplicateIds" />
+
+                <Button
+                    android:id="@+id/btn_cPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/cardInformationColor"
+                    android:text="cancel"
+                    tools:ignore="DuplicateIds" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/ib_logout"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
+        android:onClick="logout"
+        android:background="@drawable/bg_circle_white"
+        android:backgroundTint="@color/iconBlack"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_profile_logout" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

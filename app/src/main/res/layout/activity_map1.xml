@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:animationCache="true"
+    tools:context=".view.activity.MapActivity">
+
+    <fragment
+        android:id="@+id/map_frag"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        map:cameraTargetLat="15.7703384"
+        map:cameraTargetLng="76.3571446"
+        map:cameraZoom="9"
+        map:mapType="normal"
+        map:uiCompass="true"
+        map:uiRotateGestures="true"
+        map:uiScrollGestures="true"
+        map:uiTiltGestures="false"
+        map:uiZoomGestures="true" />
+
+    <ProgressBar
+        android:id="@+id/mapLoadingProgressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_circle_white"
+        android:indeterminate="true"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/iconBlack"
+        android:gravity="end"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/iv_unidadimg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerInside"
+            android:visibility="visible"
+            app:srcCompat="@drawable/ic_logo_toolbar"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="13dp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/backView"
+        android:layout_width="wrap_content"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?android:attr/selectableItemBackground"
+        android:padding="8dp"
+        android:visibility="visible"
+        app:srcCompat="@drawable/ic_arrow_back"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="14dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:onClick="navigateTripDetails"
+        app:backgroundTint="@color/colorGrayFabBBg"
+        app:layout_constraintBottom_toTopOf="@id/ll_playBottom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_list"
+        app:tint="@color/White" />
+
+    <LinearLayout
+        android:id="@+id/ll_playzoom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingBottom="14dp"
+        app:layout_constraintBottom_toTopOf="@id/ll_new_data"
+        app:layout_constraintEnd_toEndOf="@id/ll_new_data">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:onClick="showCurrentVehiclePosition"
+            app:backgroundTint="@color/colorGrayFabBBg"
+            app:srcCompat="@drawable/ic_locate_vehicle"
+            app:tint="@color/White" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:onClick="toggleFullScreen"
+            app:backgroundTint="@color/colorGrayFabBBg"
+            app:srcCompat="@drawable/ic_fullscreen"
+            app:tint="@color/White" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_new_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_card_backgroundl_rounded1"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/ll_playBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card_backgroundl_rounded1"
+            android:orientation="horizontal"
+            android:paddingLeft="25dp"
+            android:paddingTop="15dp"
+            android:paddingRight="25dp"
+            android:visibility="visible">
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginEnd="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_btn_rounded"
+                android:onClick="navigateTripDetails"
+                android:text="Trip Details"
+                android:textAllCaps="false"
+                tools:backgroundTint="#E65100" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_btn_rounded"
+                android:onClick="playBack"
+                android:text="Route Playback"
+                android:textAllCaps="false"
+                tools:backgroundTint="#E65100" />
+        </LinearLayout>
+
+        <include
+            android:id="@+id/vehicleInfoLayout"
+            layout="@layout/content_vehicle_info_single"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="18dp"
+            android:visibility="visible"
+            app:elevation="18dp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

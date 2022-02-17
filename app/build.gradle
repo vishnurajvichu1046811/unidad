@@ -1,0 +1,160 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+
+android {
+    def versionPropsFile = file('version.properties')
+    def versionBuild
+
+    /*Setting default value for versionBuild which is the last incremented value stored in the file */
+    if (versionPropsFile.canRead()) {
+        Properties versionProps = new Properties()
+        versionProps.load(new FileInputStream(versionPropsFile))
+        versionBuild = versionProps['VERSION_BUILD'].toInteger()
+    } else {
+        throw new FileNotFoundException("Could not read version.properties!")
+    }
+
+    /*Wrapping inside a method avoids auto incrementing on every gradle task run. Now it runs only when we build apk*/
+    ext.autoIncrementBuildNumber = {
+        if (versionPropsFile.canWrite()) {
+            Properties versionProps = new Properties()
+            versionProps.load(new FileInputStream(versionPropsFile))
+            versionBuild = versionProps['VERSION_BUILD'].toInteger() + 1
+            versionProps['VERSION_BUILD'] = versionBuild.toString()
+            versionProps.store(versionPropsFile.newWriter(), null)
+        } else {
+            throw new FileNotFoundException("Could not read version.properties!")
+        }
+    }
+
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+    defaultConfig {
+        applicationId "com.utracx"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode versionBuild
+        versionName "1.0.0." + versionBuild
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    buildTypes {
+        release {
+            compileOptions {
+                sourceCompatibility JavaVersion.VERSION_1_8
+                targetCompatibility JavaVersion.VERSION_1_8
+            }
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    // Hook to check if the release/debug task is among the tasks to be executed.
+    //Let's make use of it
+    gradle.taskGraph.whenReady { taskGraph ->
+        if (taskGraph.hasTask(assembleDebug)) {  /* when run debug task */
+            System.out.print("Debug build")
+        } else if (taskGraph.hasTask(assembleRelease)) { /* when run release task */
+            autoIncrementBuildNumber()
+        }
+    }
+
+    packagingOptions {
+        exclude '**/LICENSE.txt'
+        exclude '**/NOTICE.txt'
+    }
+
+    // Add this block and enable/disable the parameters as follows
+    bundle {
+        density {
+            // Different APKs are generated for devices with different screen densities; true by default.
+            enableSplit true
+        }
+        abi {
+            // Different APKs are generated for devices with different CPU architectures; true by default.
+            enableSplit true
+        }
+        language {
+            // This is disabled so that the App Bundle does NOT split the APK for each language.
+            // We're gonna use the same APK for all languages.
+            enableSplit false
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+
+    //Google Maps
+    implementation 'com.google.android.gms:play-services-maps:17.0.1'
+
+    //JSON Parsing
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.8.1'
+
+    //Analytics dependency.
+    // Firebase SDK for Google Analytics.
+    implementation 'com.google.firebase:firebase-analytics:19.0.0'
+
+    // Add the Firebase Crashlytics SDK.
+    implementation 'com.google.firebase:firebase-crashlytics:18.2.0'
+
+    // Firebase messaging - Alerts/Push Notification
+    implementation 'com.google.firebase:firebase-messaging:21.0.1'
+
+    // Room components
+    implementation 'androidx.room:room-runtime:2.3.0'
+    annotationProcessor 'androidx.room:room-compiler:2.3.0'
+
+    // Lifecycle components
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    annotationProcessor 'androidx.lifecycle:lifecycle-common-java8:2.3.1'
+
+    // Custom Tab for loading web pages within the app
+    implementation 'androidx.browser:browser:1.3.0'
+
+    //Swipe To Refresh
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+
+    // For app update notification
+    implementation 'com.google.android.play:core:1.10.0'
+
+    // For enabling Multi-Dex builds
+    implementation 'com.android.support:multidex:2.0.1'
+
+    implementation "com.google.android.material:material:1.4.0"
+    implementation 'com.github.PuffoCyano:Range-Time-Picker-Dialog:v1.8'
+    implementation group: 'com.itextpdf', name: 'itextpdf', version: '5.5.13.1'
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+    implementation 'com.romainpiel.shimmer:library:1.4.0@aar'
+    //room pagination
+    implementation 'androidx.paging:paging-runtime:2.1.0'
+
+    //navigation drawer
+    implementation 'androidx.navigation:navigation-fragment:2.3.5'
+    implementation 'androidx.navigation:navigation-ui:2.3.5'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0'
+
+    //noinspection GradleCompatible
+    implementation "com.android.support:design:24.2.0"
+
+    //volley
+    implementation 'com.android.volley:dc-volley:1.1.0'
+
+
+    implementation 'com.github.ceryle:SegmentedButton:v2.0.2'
+
+
+}

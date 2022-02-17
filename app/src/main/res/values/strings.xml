@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">UNIDAD</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+
+    <!--    Google Map Information Window -->
+    <string name="km_per_hr_placeholder">%.1f km/hr</string>
+    <string name="km_placeholder">%s km</string>
+    <string name="time_placeholder">10:37 PM 10 Spet 2020</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="total_vehicles">Total Vehicles</string>
+    <string name="website_address">www.unidadindia.com</string>
+    <string name="forgot_password"><u>Forgot password?</u></string>
+    <string name="forgot_password_title">Forgot password?</string>
+    <string name="forgot_password_message">Please contact UNIDAD support for your password</string>
+    <string name="please_hold_on">Please hold on …</string>
+    <string name="no_vehicle_data_available_for_the_selected_date">No vehicle data available for the selected date !</string>
+    <string name="more_three_dots">…</string>
+    <string name="distance">Distance</string>
+    <string name="gps_distance">GPS Distance</string>
+    <string name="max_speed">Max Speed</string>
+    <string name="avg_speed">Avg. Speed</string>
+    <string name="view_map">View Map</string>
+
+    <string name="moving">Moving</string>
+    <string name="sleep">Sleep</string>
+    <string name="offline">Offline</string>
+    <string name="online">Online</string>
+    <string name="alerts">Alerts</string>
+    <string name="reports">Reports</string>
+    <string name="no_alerts">No alerts found</string>
+    <string name="no_alerts_in_last_24hrs">No alerts yet, for selected date.</string>
+    <string name="loading_alerts_please_wait">Please wait…\nLoading latest alerts.</string>
+    <string name="default_notification_channel_id">Vehicle Alerts</string>
+
+    <string name="reports_failure">Unable to get the reports for selected date. Please try again.</string>
+
+    <string name="ok">Ok</string>
+
+    <string name="card_date">Date : %s Time : %s</string>
+    <string name="card_speed">%1$,.1f Km/hr</string>
+
+    <string name="card_speed_no_format">Speed : </string>
+    <string name="card_date_no_format">Date : </string>
+    <string name="card_status_no_format">Status : </string>
+    <string name="card_imei_no_format">IMEI : </string>
+    <string name="card_ignition_no_format">Ignition : </string>
+
+    <!--8/12-->
+    <string name="card_connect_label">Online</string>
+    <string name="card_disconnect_label">Offline</string>
+
+    <string name="card_ignition_on_label">ON</string>
+    <string name="card_ignition_off_label">OFF</string>
+
+    <string name="time">Time : </string>
+    <string name="date">Date</string>
+    <string name="start_date">Start Date</string>
+    <string name="end_date">End Date</string>
+    <string name="vehicle_registration_number">Vehicle Registration Number</string>
+    <string name="select_vehicle">Select Vehicle</string>
+    <string name="detailed_report">Detailed Report</string>
+    <string name="consolidated_report">Consolidated Report</string>
+    <string name="no_data_available">No data available for selected date.</string>
+    <string name="storage_permission_deny">Please allow, storage permission to view report.</string>
+
+    <string name="share">Share</string>
+    <string name="some_thing_went_wrong">Someting went wrong. Please try again.</string>
+    <string name="location_not_available">Location information not available</string>
+    <string name="location_fetching">Fetching location details..</string>
+
+
+    <string name="menu_profile">Change Mobile Number</string>
+    <string name="menu_cPass">Change Password</string>
+    <string name="menu_logout">Logout</string>
+
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+    <string name="nav_head_img">A</string>
+    <string name="nav_header_title">username</string>
+    <string name="edit_vehicle">Update vehicle details</string>
+</resources>
